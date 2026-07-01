@@ -168,3 +168,29 @@ if __name__ == "__main__":
     print(envelope_seguro)
     print("\n✅ Sucesso: Nenhum hacker ou administrador consegue ler o texto original sem a chave!")
 ```
+
+
+
+## 🏛️ Estudo de Caso Prático: Implantação Piloto na UFRRJ (Seropédica)
+
+Para compreender o impacto real do Ecossistema CTI, projetamos a aplicação prática da solução no campus da **Universidade Federal Rural do Rio de Janeiro (UFRRJ)**, funcionando como o primeiro laboratório vivo desta tecnologia.
+
+```mermaid
+graph TD
+    A[Alunos, Professores e Reitoria] -->|MentorIAs Individuais| B(Vínculo Local / Feto)
+    B -->|Fluxo Contínuo / Anonimizado| C{Cordão Umbilical}
+    C -->|Grande Repositório de Campo| D[Sala Física MOM: Campus UFRRJ]
+    D -->|Equipe Interdisciplinar Analisa| E[Descoberta de Causas e Porquês]
+    E -->|Geração de Nutrientes| F[Combate à Evasão e Atualização das IAs]
+    F -->|Retorno de Impacto| A
+```
+
+### 🏫 A Dinâmica do Campus Inteligente e Simbiótico
+* **O Espaço Físico MOM:** Um centro de inteligência implantado dentro do campus de Seropédica, abrigando a equipe interdisciplinar (psicólogos, assistentes sociais, pedagogos e gestores da UFRRJ).
+* **MentorIAs Customizadas:** Cada ator da comunidade acadêmica possui seu agente simbiótico focado em suas dores:
+  * **Alunos:** MentorIA de aprendizagem e suporte emocional contra o trancamento de curso.
+  * **Professores:** MentorIA de suporte pedagógico e gestão de estresse em sala de aula.
+  * **Reitoria:** MentorIA de dados agregados para tomadas de decisões institucionais macro.
+* **O Grande Repositório:** As interações diárias geram uma fonte inestimável de dados comportamentais. A equipe da UFRRJ analisa os "porquês" por trás do desânimo ou do travamento acadêmico, injeta os nutrientes (ações de acolhimento, bolsas, mudanças pedagógicas) através do Cordão, salva o estudante da evasão e devolve dados refinados que tornam as IAs do campus as mais maduras do mundo.
+
+
