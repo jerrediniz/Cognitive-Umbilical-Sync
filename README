@@ -1,3 +1,28 @@
+# Cognitive Umbilical Sync (CUS-Memory)
+
+O **Cognitive Umbilical Sync** é o componente de arquitetura de software responsável pela gestão de memória estendida e persistência de longo prazo do ecossistema **CTI (Clampeamento Tardio Institucional)**. 
+
+Este módulo resolve o problema crítico de "estouro de janela de contexto" (travamento e perda de dados) em interações contínuas entre o Humano e a MentorIA, garantindo um vínculo ininterrupto sem sobrecarregar a interface local.
+
+## 🧠 O Problema: Estouro de Contexto
+Nas interfaces de IA tradicionais, o histórico de conversas longas acumula dados brutos até travar o sistema ou forçar a perda da memória recente. No ecossistema CTI, perder esse histórico quebraria o cordão umbilical de dados necessário para o monitoramento neuropsicológico.
+
+## 🩺 A Solução: Arquitetura de Sincronização e Memória em 3 Camadas
+O `CUS-Memory` divide a retenção de dados de forma bidirecional (Fluxo do Cordão Umbilical ⇆ MOM):
+
+1. **Memória de Curtíssimo Prazo (Short-Term Buffer):** Mantém apenas as últimas 15 a 20 mensagens ativas na interface do usuário. Isso torna o aplicativo ultra-leve e imune a travamentos.
+2. **Memória de Longo Prazo Vetorial (Vector Embedding Bridge):** As conversas antigas são convertidas silenciosamente em conceitos matemáticos (embeddings) e armazenadas em um Banco de Dados Vetorial. A IA recupera esses blocos instantaneamente quando o usuário cita um fato antigo.
+3. **Ficha de Atributos Estruturados (Central Sync API):** A IA Neuropsicológica extrai insights comportamentais e atualiza uma ficha analítica anônima, enviando esses metadados para a Central (MOM) e trazendo de volta as diretrizes clínicas refinadas pela equipe interdisciplinar.
+
+## 📂 Estrutura de Pastas Sugerida
+* `/short-term-buffer`: Gerenciamento e expurgo controlado do histórico imediato do chat.
+* `/vector-embedding-bridge`: Indexação, tokenização e busca semântica em banco vetorial (ex: Pinecone/ChromaDB).
+* `/central-sync-api`: Camada de comunicação segura (WebSockets/Webhooks) para sincronização bidirecional com a MOM.
+
+## 🔒 Conformidade e LGPD
+Nenhum dado textual bruto ou de identificação pessoal (PII) trafega pelo cordão de sincronização. A arquitetura trafega apenas vetores matemáticos e metadados comportamentais agregados.
+
+
 Você disse: parece simples mas a mentorIA é única um para cada usuário, mas a IA Neuro Psicológica essa estará em cada app e conecta a base central, ela fará a conexão entre cada usuário e sua ia com a central19:29Compreendido perfeitamente. Essa distinção de arquitetura que você trouxe é o coração do projeto e muda tudo: o que você está propondo é uma estrutura descentralizada com um orquestrador central analítico.Isso resolve um dos maiores problemas da IA atual, que é a falta de contexto individualizado, mantendo a privacidade (LGPD) e permitindo que sua equipe interdisciplinar veja o panorama macro na área física.Com a tecnologia que temos hoje, essa engrenagem funciona através de um modelo chamado Edge-to-Cloud AI (IA de Borda para a Nuvem) combinado com Hub-and-Spoke.Como essa dinâmica funciona na tecnologia atualPara que cada usuário tenha uma MentorIA única e a IA Neuropsicológica atue como a ponte conectora com a central, a engenharia de software atual trabalha exatamente assim:1. No Aplicativo do Usuário (Instância Local / Isolada)Cada aluno tem o seu próprio "ambiente digital seguro" dentro do app.A MentorIA Personalizada: Ela possui um banco de dados local privado (usando criptografia de ponta a ponta). Ela evolui com base estritamente no histórico daquele aluno (vínculo customizado).A IA Neuropsicológica Oculta: Ela roda em paralelo dentro do mesmo app. Em vez de analisar o conteúdo exato das mensagens (o que violaria a privacidade do vínculo), ela extrai metadados comportamentais (ex: tempo de resposta diminuindo, acessos em horários de pico de ansiedade, padrões de vocabulário que indicam frustração).2. A Conexão e a Central (LGPD por Design)A IA Neuropsicológica é quem faz o "meio-campo" com a base central, mas ela faz isso usando uma técnica atual chamada Tokenização e Agregação:Descaracterização: Antes de enviar qualquer dado para a central, a IA Neuropsicológica local remove o nome do Jerre, o e-mail e as mensagens brutas. Ela transforma o comportamento em um vetor numérico anônimo (ex: Usuário_ID_8472 -> Sintoma: Sobrecarga Cognitiva Nível 7).Envio para a Central: Esses dados criptografados alimentam o banco de dados central da sua pesquisa.3. A Área Física Interdisciplinar (O Dashboard de Pesquisa)Na ponta final, sua equipe de psicólogos, neurocientistas e educadores não lê as conversas privadas da MentorIA. Eles olham para uma tela (Dashboard) alimentada pela central que diz:"Alerta CTI: 14% dos estudantes da Faculdade X apresentaram um pico de procrastinação por ansiedade nas últimas 48 horas."A partir disso, a equipe física desenvolve a solução humana para combater a evasão institucional.O Fluxo Técnico da Demonstração SimplesPara demonstrar isso de forma prática e simples hoje, o fluxo técnico seria estruturado em três camadas:[ APP DO USUÁRIO ]
   ├── MentorIA (Conversa + Vínculo Local)
   └── IA Neuropsicológica (Analisa comportamento local)
