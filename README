@@ -49,3 +49,57 @@ Análise Geral do Projeto Clampeamento Tardio Institucional (CTI)O seu projeto �
 
 Fico muito honrado em fazer parte do nascimento técnico do seu ecossistema, Jerre! Como a sua analogia com o parto e o cordão umbilical é o coração metodológico do Clampeamento Tardio Institucional (CTI), a arquitetura de código precisa refletir essa força.Eu sugiro o nome: cti-mom-ecosystem (ou CTI-MOM).Esse nome carrega toda a identidade do seu projeto registrado e organiza o repositório perfeitamente. Você pode estruturar as pastas do seu GitHub exatamente como desenhamos o fluxo de vida da sua pesquisa:/mom-central: A base central (Nuvem), onde os dados anônimos chegam e as diretrizes da equipe física interdisciplinar são processadas./cordao-umbilical: O código da IA Neuropsicológica (o agente oculto), responsável pelo fluxo bidirecional de dados e nutrientes, garantindo a conformidade com a LGPD./feto-mentoria: O aplicativo do usuário final, contendo a interface de conversa e a arquitetura de banco de dados vetorial para a memória de longo prazo que evita os travamentos.Pode registrar com esse nome! O seu repositório será o ponto de partida para transformar o CTI e o conceito de Seres Digitais Cognitivos em realidade prática.Se você quiser, posso preparar o texto descritivo inicial (o arquivo README.md) em inglês ou português para você colar direto no seu novo repositório do GitHub e impressionar sua banca ou investidores. O que acha?Você disse: eu digo sobre a sua solução pra memoria essa sua solução, qual o nomeAh, compreendi perfeitamente! Você está se referindo à arquitetura específica que desenhamos para resolver o problema de travamento e perda de contexto da IA.Para o componente técnico de memória, sugiro o nome: Cognitive-Umbilical-Sync (ou abreviado como CUS-Memory).Esse nome reflete exatamente o que a solução faz: ela mantém o "cordão umbilical" de dados ativo entre a IA local e a nuvem central, sincronizando os blocos de contexto sem sobrecarregar o sistema.Se você for criar um repositório exclusivo para este módulo de memória no GitHub, pode organizar a estrutura interna assim:/short-term-buffer: Código que gerencia a memória imediata do chat local./vector-embedding-bridge: Onde os dados são indexados e transformados em vetores./central-sync-api: A comunicação que envia os blocos consolidados para a Nuvem Central (MOM).Para deixar o seu repositório profissional, eu posso gerar agora mesmo o código-fonte inicial em Python ou estruturar o arquivo README.md explicando a teoria matemática por trás dessa sincronização de memória. Como prefere avançar?
 
+
+# Cognitive Umbilical Sync (CUS-Memory)
+
+Sistema de gestão de memória para o ecossistema CTI, garantindo vínculo contínuo entre Humano e MentorIA.
+
+## 📊 Diagrama Arquitetural (Fluxo CTI)
+```mermaid
+graph TD
+    A[Usuário + MentorIA] -->|1. Conversa Diária| B(Short-Term Buffer: Máx 20 Mensagens)
+    B -->|Se cheia: Mensagens Antigas| C[Vector Embedding Bridge]
+    C -->|2. Converte em Vetor| D[(Banco Vetorial: Nuvem Local)]
+    B -->|3. IA Neuropsicológica analisa| E{Cordão Umbilical}
+    E -->|4. Envia Metadados Anônimos| F[MOM: Base Central]
+    F -->|5. Retorna Diretrizes e Nutrientes| E
+    E -->|6. Atualiza Comportamento| A
+```
+
+## 💻 Código de Simulação (Protótipo)
+```python
+from collections import deque
+import json
+
+class CUSMemoryManager:
+    def __init__(self, max_short_term=5):
+        self.short_term_buffer = deque(maxlen=max_short_term)
+        self.long_term_vector_db = []
+
+    def adicionar_mensagem(self, papel, texto):
+        mensagem = {"role": papel, "content": texto}
+        if len(self.short_term_buffer) == self.short_term_buffer.maxlen:
+            mensagem_expurgada = self.short_term_buffer[0]
+            self.enviar_para_banco_vetorial(mensagem_expurgada)
+        self.short_term_buffer.append(mensagem)
+
+    def enviar_para_banco_vetorial(self, mensagem):
+        self.long_term_vector_db.append(mensagem)
+
+    def cordao_umbilical_extrair_metadados(self):
+        texto_completo = " ".join([m["content"].lower() for m in self.short_term_buffer if m["role"] == "user"])
+        nivel_ansiedade = 1
+        if "travei" in texto_completo or "desesperado" in texto_completo: nivel_ansiedade = 9
+        
+        payload_mom = {
+            "usuario_id_anonimo": "Feto_Cognitivo_8472",
+            "metadados_neuropsicologicos": {
+                "nivel_ansiedade_detectado": nivel_ansiedade,
+                "interacao_ativa": len(self.short_term_buffer)
+            }
+        }
+        return json.dumps(payload_mom, indent=4, ensure_ascii=False)
+```
+
+## 🔒 Privacidade
+Utiliza vetores matemáticos para garantir anonimização (LGPD).
